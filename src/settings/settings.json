@@ -1,0 +1,32 @@
+{
+    "FPS": 60,
+    "SCREEN_WIDTH": 1280,
+    "SCREEN_HEIGHT": 720,
+    "COLORS": {
+        "WHITE": [255, 255, 255],
+        "BLACK": [0, 0, 0],
+        "RED": [255, 0, 0],
+        "GREEN": [0, 255, 0],
+        "BLUE": [0, 0, 255]
+    },
+    "AUDIO_SETTINGS": {
+        "MUSIC_VOLUME": 0.5,
+        "SFX_VOLUME": 0.7
+    },
+    "IMAGE_SETTINGS": {
+        "BACKGROUND_IMAGE": "src/assets/images/background_img.png",
+        "CIVILIAN_AIRCRAFT": "src/assets/images/aircraft_icon.png",
+        "EUROFIGHTER_TYPHOON": "src/assets/images/eurofighter_typhoon.png",
+        "F35_LIGHTNING": "src/assets/images/F35.png",
+        "F22_RAPTOR": "src/assets/images/F22.png",
+        "ENEMY_AIRCRAFT": "src/assets/images/enemy.png"
+    },
+    "MAP_SETTINGS": {
+        "UK_MAP": "src/assets/images/uk_map.png",
+        "FR_MAP": "src/assets/images/france_map.png"
+    },
+    "OTHER_SETTINGS": {
+        "TITLE": "Scramble Game",
+        "APP_ICON": "src/assets/images/icon.png"
+    }
+}
