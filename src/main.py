@@ -124,6 +124,15 @@ try:
         elif current_scene == "map_selection":
             show_map_selection(None, manager, screen)
 
+        elif current_scene == "play_uk_map":
+            show_uk_map(None, manager, screen)
+        
+        elif current_scene == "play_france_map":
+            pass
+
+        elif current_scene == "pause":
+            show_pause(None, manager, screen)
+
         manager.update(time_delta)
         manager.draw_ui(screen)
 
