@@ -1,6 +1,6 @@
-# Project Title
+# Project Title and explaination
 
-A brief description of what this project does and who it's for.
+My project is called Scramble.
 
 ## Installation
 
@@ -39,6 +39,4 @@ Guidelines for contributing to the project.
 
 ## Acknowledgements
 
-- Any resources or libraries you used
-- Inspiration
-- etc.
+- Libraries : pygame and pygame_gui
