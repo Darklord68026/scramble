@@ -1,5 +1,5 @@
 {
-    "#menu-label": {
+    "label.#menu-label": {
         "font-size": 1000,
         "font-family": "Arial",
         "color": "#000000"

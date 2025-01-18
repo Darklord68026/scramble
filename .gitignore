@@ -1,6 +1,35 @@
-.TODO
+# Ignore les fichiers de log
 *.log
-.venv
-__pycache__
+
+# Ignore les environnements virtuels locaux
+.venv/
+env/
+ENV/
+venv/
+
+# Ignore les fichiers de cache Python
+__pycache__/
 *.pyc
-vscode/
+*.pyo
+*.pyd
+
+# Ignore les fichiers de configuration et dossiers spécifiques à VSCode
+.vscode/
+
+# Ignore les fichiers TODO
+.TODO
+
+# Ignore les fichiers générés par d'autres IDE ou éditeurs courants
+.idea/
+*.swp
+*.swo
+*.bak
+
+# Ignore les fichiers de distribution (si vous construisez des paquets)
+dist/
+build/
+*.egg-info/
+
+# Ignore les fichiers temporaires du système
+.DS_Store
+Thumbs.db
