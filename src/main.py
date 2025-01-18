@@ -1,7 +1,6 @@
 import pygame
 import pygame_gui
 import logging
-import commentjson as json
 from ui.menu import show_main_menu
 from ui.map_selection import show_map_selection
 from settings import *
