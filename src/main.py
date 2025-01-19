@@ -7,6 +7,7 @@ from ui.map_selection import show_map_selection
 from ui.play_uk_map import show_uk_map
 from ui.pause import show_pause
 from settings import *
+from app_init import initialize_app
 
 
 # Initialize logging
@@ -23,8 +24,6 @@ logging.info(f"Map settings: {MAP_SETTINGS}")
 logging.info(f"Other settings: {OTHER_SETTINGS}")
 logging.info('Settings loaded')
 
-# Initialize pygame
-pygame.init()
 
 # Get screen resolution
 def get_screen_resolution():
@@ -51,12 +50,10 @@ pygame.display.set_caption("Scramble Game")
 clock = pygame.time.Clock()
 fps = FPS
 
-# Initialize UI
-manager = pygame_gui.UIManager((SCREEN_WIDTH, SCREEN_HEIGHT), "src/assets/ui_theme.json")
-logging.info("ui_theme.json loaded")
-
 running = True
 current_scene = "menu"
+
+screen, ui_manager = initialize_app()
 
 try:
     while running:
@@ -69,32 +66,32 @@ try:
             # Handle UI events
             # Ici logique pour la scene "menu"
             if current_scene == "menu":
-                next_scene = show_main_menu(event, manager)
+                next_scene = show_main_menu(event, ui_manager)
                 if next_scene == "map_selection":
                     current_scene = "map_selection"
-                    manager.clear_and_reset()  # Réinitialiser l'écran
+                    ui_manager.clear_and_reset()  # Réinitialiser l'écran
 
             # Ici logique pour la scene "map_selection"
             elif current_scene == "map_selection":
-                next_scene = show_map_selection(event, manager)
+                next_scene = show_map_selection(event, ui_manager)
                 if next_scene == "menu":
                     current_scene = "menu"
-                    manager.clear_and_reset()  # Réinitialiser l'écran
+                    ui_manager.clear_and_reset()  # Réinitialiser l'écran
                 elif next_scene == "play_uk_map":
                     logging.info("Playing UK map")
                     current_scene = "play_uk_map"
-                    manager.clear_and_reset()
+                    ui_manager.clear_and_reset()
                 elif next_scene == "play_france_map":
                     logging.info("Playing France map")
                     current_scene = "play_france_map"
-                    manager.clear_and_reset()
+                    ui_manager.clear_and_reset()
 
             # Ici logique pour la scene "play_uk_map"
             elif current_scene == "play_uk_map":
-                next_scene = show_uk_map(event, manager)
+                next_scene = show_uk_map(event, ui_manager)
                 if next_scene == "pause":
                     current_scene = "pause"
-                    manager.clear_and_reset()
+                    ui_manager.clear_and_reset()
             
             # Ici logique pour la scene "play_france_map"
             elif current_scene == "play_france_map":
@@ -102,39 +99,39 @@ try:
 
             # Ici logique pour la scene "pause"
             elif current_scene == "pause":
-                next_scene = show_pause(event, manager)
+                next_scene = show_pause(event, ui_manager)
                 if next_scene == "play_uk_map":
                     current_scene = "play_uk_map"
-                    manager.clear_and_reset()
+                    ui_manager.clear_and_reset()
                 elif next_scene == "menu":
                     current_scene = "menu"
-                    manager.clear_and_reset()
+                    ui_manager.clear_and_reset()
                 elif next_scene == "quit":
                     running = False
 
-            manager.process_events(event)
+            ui_manager.process_events(event)
 
         # Effacer l'écran
         screen.fill(WHITE)
 
         # Mettre à jour l'interface utilisateur
         if current_scene == "menu":
-            show_main_menu(None, manager, screen)
+            show_main_menu(None, ui_manager, screen)
 
         elif current_scene == "map_selection":
-            show_map_selection(None, manager, screen)
+            show_map_selection(None, ui_manager, screen)
 
         elif current_scene == "play_uk_map":
-            show_uk_map(None, manager, screen)
+            show_uk_map(None, ui_manager, screen)
         
         elif current_scene == "play_france_map":
             pass
 
         elif current_scene == "pause":
-            show_pause(None, manager, screen)
+            show_pause(None, ui_manager, screen)
 
-        manager.update(time_delta)
-        manager.draw_ui(screen)
+        ui_manager.update(time_delta)
+        ui_manager.draw_ui(screen)
 
         pygame.display.flip()
 except KeyboardInterrupt:

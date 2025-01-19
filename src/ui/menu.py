@@ -1,8 +1,9 @@
 import pygame_gui
 import pygame
 from settings import *
-from main import logging
-from ui.ui_manager import ui_manager
+from app_init import initialize_app
+
+screen, ui_manager = initialize_app()
 
 def show_main_menu(event, screen=None):
     if event:

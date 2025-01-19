@@ -1,7 +1,60 @@
 {
-    "#menu-label": {
-        "font-size": 1000,
-        "font-family": "Arial",
-        "color": "#000000"
+    "default": {
+        "font": {
+            "file_path": "src/assets/fonts/Roboto-Regular.ttf",
+            "size": 14
+        },
+        "colours": {
+            "normal_text": "#FFFFFF",
+            "dark_bg": "#2E2E2E",
+            "light_bg": "#424242",
+            "hovered_button": "#3D5AFE",
+            "active_button": "#1A237E",
+            "disabled_button": "#757575"
+        }
+    },
+    "button": {
+        "font": {
+            "file_path": "src/assets/fonts/Roboto-Bold.ttf",
+            "size": 16
+        },
+        "colours": {
+            "normal_bg": "#1E88E5",
+            "hovered_bg": "#1565C0",
+            "active_bg": "#0D47A1",
+            "disabled_bg": "#BDBDBD",
+            "normal_text": "#FFFFFF",
+            "hovered_text": "#E3F2FD",
+            "active_text": "#BBDEFB",
+            "disabled_text": "#9E9E9E"
+        },
+        "border_width": 2,
+        "border_colour": "#0D47A1",
+        "shadow_width": 1
+    },
+    "label": {
+        "font": {
+            "file_path": "src/assets/fonts/Roboto-Regular.ttf",
+            "size": 14
+        },
+        "colours": {
+            "normal_text": "#E0E0E0",
+            "bg": "#2E2E2E"
+        }
+    },
+    "text_box": {
+        "font": {
+            "file_path": "src/assets/fonts/Roboto-Regular.ttf",
+            "size": 14
+        },
+        "colours": {
+            "normal_bg": "#1E1E1E",
+            "selected_bg": "#424242",
+            "normal_text": "#E0E0E0",
+            "selected_text": "#FFFFFF",
+            "border": "#757575"
+        },
+        "border_width": 1,
+        "shadow_width": 1
     }
 }
