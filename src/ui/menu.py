@@ -1,8 +1,10 @@
 import pygame_gui
 import pygame
 from settings import *
+from main import logging
+from ui.ui_manager import ui_manager
 
-def show_main_menu(event, manager, screen=None):
+def show_main_menu(event, screen=None):
     if event:
         if event.type == pygame.USEREVENT:
             if event.user_type == pygame_gui.UI_BUTTON_PRESSED:
@@ -27,7 +29,7 @@ def show_main_menu(event, manager, screen=None):
                 (label_width, label_height)
             ),
             text="Menu Principal",
-            manager=manager,
+            manager=ui_manager,
             object_id="#menu-label"
         )
         pygame_gui.elements.UIButton(
@@ -36,7 +38,7 @@ def show_main_menu(event, manager, screen=None):
                 (button_width, button_height)
             ),
             text="Jouer",
-            manager=manager,
+            manager=ui_manager,
             object_id="#play-button"
         )
         pygame_gui.elements.UIButton(
@@ -45,7 +47,7 @@ def show_main_menu(event, manager, screen=None):
                 (button_width, button_height)
             ),
             text="Quitter",
-            manager=manager,
+            manager=ui_manager,
             object_id="#quit-button"
         )
     return None

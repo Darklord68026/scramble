@@ -2,8 +2,9 @@ import pygame
 import pygame_gui
 from settings import *
 from main import logging
+from ui.ui_manager import ui_manager
 
-def show_map_selection(event, manager, screen=None):
+def show_map_selection(event, screen=None):
     if event:
         if event.type == pygame.USEREVENT:
             if event.user_type == pygame_gui.UI_BUTTON_PRESSED:
@@ -28,7 +29,7 @@ def show_map_selection(event, manager, screen=None):
                 (label_width, label_height)
             ),
             text="Sélectionnez une carte",
-            manager=manager,
+            manager=ui_manager,
             object_id="#map-selection-label"
         )
 
@@ -38,7 +39,7 @@ def show_map_selection(event, manager, screen=None):
                 (button_width, button_height)
             ),
             text="Map Royaume-Uni",
-            manager=manager,
+            manager=ui_manager,
             object_id="#uk-map-button"
         )
         pygame_gui.elements.UIButton(
@@ -47,7 +48,7 @@ def show_map_selection(event, manager, screen=None):
                 (button_width, button_height)
             ),
             text="Map France",
-            manager=manager,
+            manager=ui_manager,
             object_id="#fr-map-button"
         )
         pygame_gui.elements.UIButton(
@@ -56,7 +57,7 @@ def show_map_selection(event, manager, screen=None):
                 (button_width, button_height)
             ),
             text="Retour",
-            manager=manager,
+            manager=ui_manager,
             object_id="#back-button"
         )
     return None

@@ -3,8 +3,9 @@ import pygame_gui
 from settings import *
 from main import logging
 from pygame.locals import *
+from ui.ui_manager import ui_manager
 
-def show_pause(event, manager, screen=None):
+def show_pause(event, screen=None):
     if event:
         if event.type == KEYDOWN:
             if event.key == K_ESCAPE:
@@ -33,7 +34,7 @@ def show_pause(event, manager, screen=None):
                 (label_width, label_height)
             ),
             text="Pause",
-            manager=manager,
+            manager=ui_manager,
             object_id="#pause-label"
         )
         pygame_gui.elements.UIButton(
@@ -42,7 +43,7 @@ def show_pause(event, manager, screen=None):
                 (button_width, button_height)
             ),
             text="Retour",
-            manager=manager,
+            manager=ui_manager,
             object_id="#resume-button"
         )
         pygame_gui.elements.UIButton(
@@ -51,7 +52,7 @@ def show_pause(event, manager, screen=None):
                 (button_width, button_height)
             ),
             text="Menu",
-            manager=manager,
+            manager=ui_manager,
             object_id="#menu-button"
         )
         pygame_gui.elements.UIButton(
@@ -60,7 +61,7 @@ def show_pause(event, manager, screen=None):
                 (button_width, button_height)
             ),
             text="Quitter",
-            manager=manager,
+            manager=ui_manager,
             object_id="#quit-button"
         )
     return None
