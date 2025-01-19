@@ -94,7 +94,6 @@ try:
                 next_scene = show_uk_map(event, manager)
                 if next_scene == "pause":
                     current_scene = "pause"
-                    manager.clear_and_reset()
             
             # Ici logique pour la scene "play_france_map"
             elif current_scene == "play_france_map":
@@ -109,8 +108,6 @@ try:
                 elif next_scene == "menu":
                     current_scene = "menu"
                     manager.clear_and_reset()
-                elif next_scene == "quit":
-                    running = False
 
             manager.process_events(event)
 
@@ -139,6 +136,11 @@ try:
         pygame.display.flip()
 except KeyboardInterrupt:
     logging.info('Game stopped by user')
+    running = False
+    pygame.quit()
+except Exception as e:
+    logging.error(f'Error: {e}')
+    running = False
     pygame.quit()
 
 logging.info('Game ended')

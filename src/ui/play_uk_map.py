@@ -11,5 +11,7 @@ def show_uk_map(event, manager, screen=None):
                 return "pause"
             
     if screen:
-        pass
+        background_image = pygame.image.load(UK_MAP)
+        resized_background = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
+        screen.blit(resized_background, (0, 0))
     return None

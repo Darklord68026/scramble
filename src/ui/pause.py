@@ -16,13 +16,15 @@ def show_pause(event, manager, screen=None):
                 elif event.ui_element.text == "Menu":
                     return "menu"
                 elif event.ui_element.text == "Quitter":
-                    return "quit"
+                    pygame.quit()
+                    exit()
     
     if screen:
-        # Charger l'image de fond
-        background_image = pygame.image.load(BACKGROUND)
-        resized_background = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
-        screen.blit(resized_background, (0, 0))
+        # Draw a semi-transparent overlay
+        overlay = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT))
+        overlay.set_alpha(128)  # Set transparency level to 50%
+        overlay.fill((0, 0, 0))  # Fill with black color
+        screen.blit(overlay, (0, 0))
 
         label_width, label_height = 300, 50
         button_width, button_height = 200, 50

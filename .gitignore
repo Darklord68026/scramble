@@ -8,7 +8,7 @@ ENV/
 venv/
 
 # Ignore les fichiers de cache Python
-__pycache__/
+*/__pycache__/
 *.pyc
 *.pyo
 *.pyd
